@@ -1,10 +1,24 @@
-import Title from "antd/es/typography/Title";
+import { useEffect } from "react";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
+import { getUser } from "./services/userServices";
 
 const App = () => {
+    const storeUser = async (userId: number) => {
+        const response = await getUser(userId);
+        console.log(response);
+    };
+
+    useEffect(() => {
+        const userId = Number(localStorage.getItem("userId"));
+        if (userId) {
+            storeUser(userId);
+        }
+    }, []);
+
     return (
         <>
-            <Title level={1}>Task manager</Title>
-            <Title level={2}>Init</Title>
+            <RouterProvider router={router} />
         </>
     );
 };
