@@ -3,11 +3,10 @@ import { Role } from "../../types";
 
 interface IAuthorizedComponentProps {
     allowedRoles: Role[];
-    userRole: Role;
     children: React.ReactNode;
 }
 
-const AuthorizedComponent: FC<IAuthorizedComponentProps> = ({ allowedRoles, userRole, children }) => {
+const AuthorizedComponent: FC<IAuthorizedComponentProps> = ({ allowedRoles, children }) => {
     if (allowedRoles.includes(userRole)) {
         return children;
     }

@@ -12,19 +12,19 @@ const AppMenuComponent: FC = () => {
 
     const items = [
         {
-            key: "organizations",
+            key: "/organizations",
             icon: <UnorderedListOutlined />,
             label: "Organizations",
             onClick: handleLinkClick,
         },
         {
-            key: "users",
+            key: "/users",
             icon: <UnorderedListOutlined />,
             label: "Users",
             onClick: handleLinkClick,
         },
         {
-            key: "tasks",
+            key: "/tasks",
             icon: <UnorderedListOutlined />,
             label: "Tasks",
             onClick: handleLinkClick,

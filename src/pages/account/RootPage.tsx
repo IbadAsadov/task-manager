@@ -1,12 +1,11 @@
 import { FC } from "react";
-import AppLayout from "../../components/layouts/Layout";
-import { Outlet } from "react-router-dom";
+import { Typography } from "antd";
 
 const Rootpage: FC = () => {
     return (
-        <AppLayout>
-            <Outlet />
-        </AppLayout>
+        <Typography.Title level={2} style={{ textAlign: "center" }}>
+            Welcome to Task Manager
+        </Typography.Title>
     );
 };
 

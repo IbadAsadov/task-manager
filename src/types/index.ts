@@ -38,3 +38,5 @@ interface ITask {
 }
 
 export type { IUser, IOrganization, ITask, TaskStatus, Role };
+
+export { Role as Roles };

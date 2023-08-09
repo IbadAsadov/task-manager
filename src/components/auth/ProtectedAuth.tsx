@@ -11,7 +11,7 @@ const ProtectedAuthComponent: FC<IProtectedAuthComponentProps> = ({ children }) 
     const protectedRoutes: string[] = ["/login", "/register"];
 
     if (localStorage.getItem("userId") && protectedRoutes.includes(location.pathname)) {
-        return <Navigate to="/account" />;
+        return <Navigate to="/dashboard" />;
     }
 
     return children;
