@@ -1,7 +1,8 @@
 import { FC, useState, memo } from "react";
 import { Layout, Button, theme } from "antd";
 import AppMenu from "./Menu";
-import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import { MenuUnfoldOutlined, MenuFoldOutlined, LogoutOutlined } from "@ant-design/icons";
+import { logout } from "../../helpers/logout";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -34,6 +35,12 @@ const AppLayoutComponent: FC<LayoutProps> = ({ children }) => {
                                 width: 64,
                                 height: 64,
                             }}
+                        />
+                        <Button
+                            type="text"
+                            style={{ fontSize: "16px", width: 64, height: 64, float: "right" }}
+                            icon={<LogoutOutlined />}
+                            onClick={logout}
                         />
                     </Header>
                     <Content

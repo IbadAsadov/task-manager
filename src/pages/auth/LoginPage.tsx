@@ -1,12 +1,13 @@
 import { FC } from "react";
 import { useDispatch } from "react-redux";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Col, Row, Typography, Button, Form, Input, message } from "antd";
 import { AppDispatch } from "../../store";
 import { setUser } from "../../store/authSlice";
 import { IUser } from "../../types";
 import { getUsers } from "../../services/userServices";
+import { setUserInLocalStorage } from "../../helpers/localstorage";
 
 interface ILoginData {
     email: string;
@@ -14,14 +15,17 @@ interface ILoginData {
 }
 
 const LoginPage: FC = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch<AppDispatch>();
 
     const handleLogin = (user: IUser) => {
         dispatch(setUser(user));
 
         if (user.id !== undefined) {
-            localStorage.setItem("userId", user.id.toString());
+           setUserInLocalStorage(user);
         }
+
+        navigate("/dashboard");
     };
 
     const onFinish = async (values: ILoginData) => {
