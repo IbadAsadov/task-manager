@@ -18,7 +18,10 @@ const UserListPage: FC = () => {
     }, []);
 
     const fetchData = async () => {
-        const query_params: Record<string, string | number> = {};
+       const query_params: Record<string, string | number> = {
+           "_sort": "id",
+           "_order": "desc",
+       };
 
         if (user) {
             if (user.role === Roles.organization) {

@@ -1,17 +1,5 @@
 {
   "organizations": [
-    {
-      "id": 2,
-      "organization_name": "Test company",
-      "phone": "0501112233",
-      "address": "Baku"
-    },
-    {
-      "organization_name": "Ibad Company",
-      "phone": "0502221111",
-      "address": "Baki",
-      "id": 3
-    }
   ],
   "users": [
     {
@@ -21,58 +9,8 @@
       "password": "12345678",
       "role": "admin",
       "id": 6
-    },
-    {
-      "name": "Ibad OA",
-      "surname": "Asadov",
-      "email": "asadov.ibad@gmail.com",
-      "password": "12345678",
-      "organizationId": 3,
-      "role": "organization",
-      "id": 7
-    },
-    {
-      "organizationId": 3,
-      "role": "user",
-      "name": "Qismet",
-      "surname": "Mammadov",
-      "email": "gismat@gmail.com",
-      "password": "12345678",
-      "id": 8
-    },
-    {
-      "organizationId": 2,
-      "role": "user",
-      "name": "otheruser",
-      "surname": "Asadov",
-      "email": "otheruser@gmail.com",
-      "password": "12345678",
-      "id": 9
     }
   ],
   "tasks": [
-    {
-      "title": "test",
-      "description": "sdfsdf",
-      "deadline": "2023-08-04T12:12:17.476Z",
-      "organizationId": 2,
-      "userIds": [
-        9
-      ],
-      "status": "new",
-      "id": 1
-    },
-    {
-      "title": "Enim ipsam illo even",
-      "description": "sdfsdf asdas  asda d sdfsdf asdas  asda d sdfsdf asdas  asda d sdfsdf asdas  asda d sdfsdf asdas  asda d ",
-      "deadline": "2023-08-04T12:11:55.157Z",
-      "organizationId": 3,
-      "userIds": [
-        8,
-        7
-      ],
-      "status": "new",
-      "id": 2
-    }
   ]
 }

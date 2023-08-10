@@ -22,3 +22,8 @@ export const createTask = async (taskData: ITaskData): Promise<ITask> => {
 export const removeTask = async (taskId: number): Promise<void> => {
     await request.delete(`/tasks/${taskId}`);
 };
+
+export const updateTask = async (taskId: number, taskData: ITaskData): Promise<ITask> => {
+    const response = await request.put(`/tasks/${taskId}`, taskData);
+    return response.data;
+}

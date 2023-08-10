@@ -3,6 +3,9 @@ import { Layout, Button, theme } from "antd";
 import AppMenu from "./Menu";
 import { MenuUnfoldOutlined, MenuFoldOutlined, LogoutOutlined } from "@ant-design/icons";
 import { logout } from "../../helpers/logout";
+import { IUser } from "../../types";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -12,6 +15,7 @@ interface LayoutProps {
 
 const AppLayoutComponent: FC<LayoutProps> = ({ children }) => {
     const [collapsed, setCollapsed] = useState(false);
+    const user: IUser = useSelector((state: RootState) => state.auth.user);
 
     const {
         token: { colorBgContainer },
@@ -42,6 +46,9 @@ const AppLayoutComponent: FC<LayoutProps> = ({ children }) => {
                             icon={<LogoutOutlined />}
                             onClick={logout}
                         />
+                        <span style={{ fontSize: "16px", marginLeft: 16, float: "right", marginRight: "30px" }}>
+                            {user.name} {user.surname}
+                        </span>
                     </Header>
                     <Content
                         style={{

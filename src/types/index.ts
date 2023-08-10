@@ -21,6 +21,7 @@ interface IUserData {
 
 interface IUser extends IUserData {
     id: number;
+    organization?: IOrganization;
 }
 
 interface IOrganizationData {
@@ -44,6 +45,7 @@ interface ITaskData {
 
 interface ITask extends ITaskData {
     id: number;
+    organization?: IOrganization;
 }
 
 interface IOption {
