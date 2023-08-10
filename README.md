@@ -1,4 +1,12 @@
-# Project installation
+## Project tech stack
+- Typescript
+- React
+- Ant Design
+- Redux-toolkit
+- React-router-dom
+- Json-server
+
+## Project installation
 
 1.Upload npm packages
 ```
