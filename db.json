@@ -5,12 +5,18 @@
       "organization_name": "KOBIA",
       "phone": "0501112233",
       "address": "Baku"
+    },
+    {
+      "id": 2,
+      "organization_name": "Test company",
+      "phone": "0501112233",
+      "address": "Baku"
     }
   ],
   "users": [
     {
-      "name": "Jane",
-      "surname": "Smith",
+      "name": "Admin",
+      "surname": "Asadov",
       "email": "admin@gmail.com",
       "password": "12345678",
       "role": "admin",
@@ -19,8 +25,8 @@
     {
       "organizationId": 1,
       "role": "organization",
-      "name": "test",
-      "surname": "test",
+      "name": "Organization",
+      "surname": "Asadov",
       "email": "organization@gmail.com",
       "password": "12345678",
       "id": 7
@@ -28,12 +34,34 @@
     {
       "organizationId": 1,
       "role": "user",
-      "name": "test",
+      "name": "User",
       "surname": "Asadov",
       "email": "user@gmail.com",
       "password": "12345678",
       "id": 8
+    },
+    {
+      "organizationId": 1,
+      "role": "organization",
+      "name": "Organization 2",
+      "surname": "Asadov",
+      "email": "organization2@gmail.com",
+      "password": "12345678",
+      "id": 9
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "title": "Enim ipsam illo even",
+      "description": "sdfsdf",
+      "deadline": "Fri, 11 Aug 2023 11:31:42 GMT",
+      "organizationId": 1,
+      "userIds": [
+        8,
+        9
+      ],
+      "status": "new",
+      "id": 1
+    }
+  ]
 }

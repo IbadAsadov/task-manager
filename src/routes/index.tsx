@@ -10,6 +10,7 @@ import ProtectedRoute from "../components/auth/ProtectedRoute";
 import { Roles } from "../types";
 import RootPage from "../pages/account/RootPage";
 import UserCreatePage from "../pages/users/UserCreatePage";
+import TaskCreatePage from "../pages/tasks/TaskCreatePage";
 
 const routes: RouteObject[] = [
     {
@@ -61,6 +62,14 @@ const routes: RouteObject[] = [
                 element: (
                     <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization, Roles.user]}>
                         <TaskListPage />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "tasks/create",
+                element: (
+                    <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization, Roles.user]}>
+                        <TaskCreatePage />
                     </ProtectedRoute>
                 ),
             },

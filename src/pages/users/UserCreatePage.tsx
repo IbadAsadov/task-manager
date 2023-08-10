@@ -1,18 +1,9 @@
 import { FC, memo, useEffect, useState } from "react";
 import { Col, Row, Button, Form, Input, message, Select } from "antd";
-import { IOption, IOrganization, Role, Roles } from "../../types";
+import { IOption, IOrganization, IUserData, Roles } from "../../types";
 import { getOrganizations } from "../../services/organizationService";
 import { createUser, getUsers } from "../../services/userServices";
 import { useNavigate } from "react-router-dom";
-
-interface IFormData {
-    name: string;
-    surname: string;
-    email: string;
-    password: string;
-    organizationId: number;
-    role: Role;
-}
 
 const UserCreate: FC = () => {
     const [organizations, setOrganizations] = useState<IOption[]>([]);
@@ -42,7 +33,7 @@ const UserCreate: FC = () => {
         }
     };
 
-    const onFinish = async (values: IFormData) => {
+    const onFinish = async (values: IUserData) => {
         try {
             //check email
             const checkUsers = await getUsers({ email: values.email });
@@ -51,7 +42,7 @@ const UserCreate: FC = () => {
                 message.error("Email already exists.");
                 return;
             }
-            
+
             //create user
             await createUser(values);
             message.success("User created successfully");

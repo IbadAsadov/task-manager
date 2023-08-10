@@ -53,4 +53,4 @@ interface IOption {
 
 export type { IUserData, IUser, IOrganizationData, IOrganization, ITaskData, ITask, TaskStatus, Role, IOption };
 
-export { Role as Roles };
+export { Role as Roles, TaskStatus as TaskStatuses };
