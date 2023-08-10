@@ -15,7 +15,23 @@ yarn server
 yarn dev
 ```
 
-# Project 
+## Info 
+`/login` : route login for all user
+
+`/register` : route register for company and organization account
+
+## Roles: 
+1. admin
+2. organization
+3. user
+
+## Admin account
+#### email: admin@gmail.com
+#### password: 12345678
+
+
+
+## Project 
 
 
 • UI design.
