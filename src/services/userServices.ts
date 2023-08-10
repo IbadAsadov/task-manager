@@ -3,9 +3,6 @@ import request from "../helpers/request";
 import { IUser, IUserData } from "../types";
 
 interface IQureyParams {
-    page?: number;
-    limit?: number;
-    search?: string;
     email?: string;
     password?: string;
     organizationId?: number;

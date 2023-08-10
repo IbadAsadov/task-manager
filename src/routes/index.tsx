@@ -31,7 +31,11 @@ const routes: RouteObject[] = [
     },
     {
         path: "dashboard",
-        element: <RootPage />,
+        element: (
+            <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization, Roles.user]}>
+                <RootPage />
+            </ProtectedRoute>
+        ),
         children: [
             {
                 path: "organizations",

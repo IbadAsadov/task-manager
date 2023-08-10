@@ -1,16 +1,16 @@
 {
   "organizations": [
     {
-      "id": 1,
-      "organization_name": "KOBIA",
-      "phone": "0501112233",
-      "address": "Baku"
-    },
-    {
       "id": 2,
       "organization_name": "Test company",
       "phone": "0501112233",
       "address": "Baku"
+    },
+    {
+      "organization_name": "Ibad Company",
+      "phone": "0502221111",
+      "address": "Baki",
+      "id": 3
     }
   ],
   "users": [
@@ -23,45 +23,56 @@
       "id": 6
     },
     {
-      "organizationId": 1,
-      "role": "organization",
-      "name": "Organization",
+      "name": "Ibad OA",
       "surname": "Asadov",
-      "email": "organization@gmail.com",
+      "email": "asadov.ibad@gmail.com",
       "password": "12345678",
+      "organizationId": 3,
+      "role": "organization",
       "id": 7
     },
     {
-      "organizationId": 1,
+      "organizationId": 3,
       "role": "user",
-      "name": "User",
-      "surname": "Asadov",
-      "email": "user@gmail.com",
+      "name": "Qismet",
+      "surname": "Mammadov",
+      "email": "gismat@gmail.com",
       "password": "12345678",
       "id": 8
     },
     {
-      "organizationId": 1,
-      "role": "organization",
-      "name": "Organization 2",
+      "organizationId": 2,
+      "role": "user",
+      "name": "otheruser",
       "surname": "Asadov",
-      "email": "organization2@gmail.com",
+      "email": "otheruser@gmail.com",
       "password": "12345678",
       "id": 9
     }
   ],
   "tasks": [
     {
-      "title": "Enim ipsam illo even",
+      "title": "test",
       "description": "sdfsdf",
-      "deadline": "Fri, 11 Aug 2023 11:31:42 GMT",
-      "organizationId": 1,
+      "deadline": "2023-08-04T12:12:17.476Z",
+      "organizationId": 2,
       "userIds": [
-        8,
         9
       ],
       "status": "new",
       "id": 1
+    },
+    {
+      "title": "Enim ipsam illo even",
+      "description": "sdfsdf asdas  asda d sdfsdf asdas  asda d sdfsdf asdas  asda d sdfsdf asdas  asda d sdfsdf asdas  asda d ",
+      "deadline": "2023-08-04T12:11:55.157Z",
+      "organizationId": 3,
+      "userIds": [
+        8,
+        7
+      ],
+      "status": "new",
+      "id": 2
     }
   ]
 }
