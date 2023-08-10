@@ -10,25 +10,30 @@ enum Role {
     "organization" = "organization",
 }
 
-interface IUser {
-    id?: number;
+interface IUserData {
     name: string;
     surname: string;
     role: Role;
     email: string;
     password: string;
-    organizationId: string;
+    organizationId: number;
 }
 
-interface IOrganization {
-    id?: number;
-    name: string;
+interface IUser extends IUserData {
+    id: number;
+}
+
+interface IOrganizationData {
+    organization_name: string;
     phone: string;
     address: string;
 }
 
-interface ITask {
-    id?: number;
+interface IOrganization extends IOrganizationData {
+    id: number;
+}
+
+interface ITaskData {
     title: string;
     description: string;
     deadline: string;
@@ -37,6 +42,10 @@ interface ITask {
     organizationId: number;
 }
 
-export type { IUser, IOrganization, ITask, TaskStatus, Role };
+interface ITask extends ITaskData {
+    id: number;
+}
+
+export type { IUserData, IUser, IOrganizationData, IOrganization, ITaskData, ITask, TaskStatus, Role };
 
 export { Role as Roles };

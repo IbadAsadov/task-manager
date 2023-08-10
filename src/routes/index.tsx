@@ -9,11 +9,10 @@ import ProtectedAuth from "../components/auth/ProtectedAuth";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import { Roles } from "../types";
 import RootPage from "../pages/account/RootPage";
-import AppLayout from "../components/layouts/Layout";
 
 const routes: RouteObject[] = [
     {
-        path: "/login",
+        path: "login", 
         element: (
             <ProtectedAuth>
                 <LoginPage />
@@ -21,7 +20,7 @@ const routes: RouteObject[] = [
         ),
     },
     {
-        path: "/register",
+        path: "register", 
         element: (
             <ProtectedAuth>
                 <RegisterPage />
@@ -29,47 +28,37 @@ const routes: RouteObject[] = [
         ),
     },
     {
-        path: "/dashboard",
-        element: (
-            <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization]}>
-                <AppLayout>
-                    <RootPage />
-                </AppLayout>
-            </ProtectedRoute>
-        ),
+        path: "dashboard", 
+        element: <RootPage />,
+        children: [
+            {
+                path: "organizations",
+                element: (
+                    <ProtectedRoute allowedRoles={[Roles.admin]}>
+                        <OrganizationListPage />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "users", 
+                element: (
+                    <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization]}>
+                        <UserListPage />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "tasks", 
+                element: (
+                    <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization, Roles.user]}>
+                        <TaskListPage />
+                    </ProtectedRoute>
+                ),
+            },
+        ],
     },
     {
-        path: "/users",
-        element: (
-            <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization]}>
-                <AppLayout>
-                    <UserListPage />
-                </AppLayout>
-            </ProtectedRoute>
-        ),
-    },
-    {
-        path: "/tasks",
-        element: (
-            <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization]}>
-                <AppLayout>
-                    <TaskListPage />
-                </AppLayout>
-            </ProtectedRoute>
-        ),
-    },
-    {
-        path: "/organizations",
-        element: (
-            <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization]}>
-                <AppLayout>
-                    <OrganizationListPage />
-                </AppLayout>
-            </ProtectedRoute>
-        ),
-    },
-    {
-        path: "*",
+        path: "*", 
         element: <Error status={404} title="404" subTitle="Sorry, the page you visited does not exist." />,
     },
 ];

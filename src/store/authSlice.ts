@@ -8,7 +8,7 @@ interface IAuthSlice {
 }
 
 const initialState: IAuthSlice = {
-    user: getUserFromLocalStorage() ? getUserFromLocalStorage() : null,
+    user: getUserFromLocalStorage(),
 };
 export const fetchInitialUser = createAsyncThunk("auth/fetchInitialUser", async (userId: number) => {
     const response = await getUser(userId);

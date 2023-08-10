@@ -1,12 +1,15 @@
-import { FC } from "react";
-import { Typography } from "antd";
+import { FC, memo } from "react";
+import { Outlet } from "react-router-dom";
+import AppLayout from "../../components/layouts/Layout";
 
-const Rootpage: FC = () => {
+const RootP: FC = () => {
     return (
-        <Typography.Title level={2} style={{ textAlign: "center" }}>
-            Welcome to Task Manager
-        </Typography.Title>
+        <AppLayout>
+            <Outlet />
+        </AppLayout>
     );
 };
+
+const Rootpage = memo(RootP);
 
 export default Rootpage;

@@ -1,15 +1,30 @@
 {
-    "organizations": [],
-    "users": [
-        {
-            "id": 1,
-            "name": "Ibad",
-            "surname": "Asadov",
-            "role": "admin",
-            "email": "admin@gmail.com",
-            "password": "12345678",
-            "organizationId": 0
-        }
-    ],
-    "tasks": []
+  "organizations": [
+    {
+      "organization_name": "company",
+      "phone": "0502221144",
+      "address": "Baki",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "name": "Jane",
+      "surname": "Smith",
+      "email": "admin@gmail.com",
+      "password": "12345678",
+      "role": "admin",
+      "id": 6
+    },
+    {
+      "name": "William",
+      "surname": "Miller",
+      "email": "william@example.com",
+      "password": "willpass10",
+      "organizationId": 5,
+      "role": "organization",
+      "id": 10
+    }
+  ],
+  "tasks": []
 }
