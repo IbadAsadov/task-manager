@@ -59,7 +59,7 @@ const AppMenuComponent: FC = () => {
         ],
     };
 
-    return <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]} items={links[user?.role]} />;
+    return <Menu theme="dark" mode="inline" items={links[user?.role]} />;
 };
 
 const AppMenu = memo(AppMenuComponent);

@@ -72,11 +72,13 @@ const UserListPage: FC = () => {
             title: "Action",
             key: "action",
             render: (_, record) => (
-                <Space size="middle">
-                    <Button type="primary" onClick={() => handleDelete(record.id)}>
-                        Delete
-                    </Button>
-                </Space>
+                <Authorized allowedRoles={[Roles.admin]}>
+                    <Space size="middle">
+                        <Button type="primary" onClick={() => handleDelete(record.id)}>
+                            Delete
+                        </Button>
+                    </Space>
+                </Authorized>
             ),
         },
     ];
