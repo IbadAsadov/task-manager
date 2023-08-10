@@ -2,7 +2,7 @@ import { Col, Row, Typography, Button, Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { createOrganization } from "../../services/organizationService";
 import { createUser, getUsers } from "../../services/userServices";
-import { IOrganization, IOrganizationData, IUser, IUserData, Roles } from "../../types";
+import { IOrganization, IOrganizationData, IUserData, Roles } from "../../types";
 
 interface IRegisterData {
     organization_name: string;

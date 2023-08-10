@@ -46,6 +46,11 @@ interface ITask extends ITaskData {
     id: number;
 }
 
-export type { IUserData, IUser, IOrganizationData, IOrganization, ITaskData, ITask, TaskStatus, Role };
+interface IOption {
+    value: number | string;
+    label: string;
+}
+
+export type { IUserData, IUser, IOrganizationData, IOrganization, ITaskData, ITask, TaskStatus, Role, IOption };
 
 export { Role as Roles };

@@ -11,7 +11,7 @@ interface IQureyParams {
     organizationId?: number;
 }
 
-export const getUsers = async (query_params: IQureyParams): Promise<IUser[]> => {
+export const getUsers = async (query_params: IQureyParams = {}): Promise<IUser[]> => {
     const params = new URLSearchParams(query_params as Record<string, string>);
     const queryString = "?" + params.toString();
     const response: AxiosResponse = await request.get(`/users${queryString}`);

@@ -1,10 +1,10 @@
 {
   "organizations": [
     {
-      "organization_name": "company",
-      "phone": "0502221144",
-      "address": "Baki",
-      "id": 5
+      "id": 1,
+      "organization_name": "KOBIA",
+      "phone": "0501112233",
+      "address": "Baku"
     }
   ],
   "users": [
@@ -17,13 +17,22 @@
       "id": 6
     },
     {
-      "name": "William",
-      "surname": "Miller",
-      "email": "william@example.com",
-      "password": "willpass10",
-      "organizationId": 5,
+      "organizationId": 1,
       "role": "organization",
-      "id": 10
+      "name": "test",
+      "surname": "test",
+      "email": "organization@gmail.com",
+      "password": "12345678",
+      "id": 7
+    },
+    {
+      "organizationId": 1,
+      "role": "user",
+      "name": "test",
+      "surname": "Asadov",
+      "email": "user@gmail.com",
+      "password": "12345678",
+      "id": 8
     }
   ],
   "tasks": []

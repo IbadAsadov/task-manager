@@ -9,10 +9,11 @@ import ProtectedAuth from "../components/auth/ProtectedAuth";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import { Roles } from "../types";
 import RootPage from "../pages/account/RootPage";
+import UserCreatePage from "../pages/users/UserCreatePage";
 
 const routes: RouteObject[] = [
     {
-        path: "login", 
+        path: "login",
         element: (
             <ProtectedAuth>
                 <LoginPage />
@@ -20,7 +21,7 @@ const routes: RouteObject[] = [
         ),
     },
     {
-        path: "register", 
+        path: "register",
         element: (
             <ProtectedAuth>
                 <RegisterPage />
@@ -28,7 +29,7 @@ const routes: RouteObject[] = [
         ),
     },
     {
-        path: "dashboard", 
+        path: "dashboard",
         element: <RootPage />,
         children: [
             {
@@ -40,7 +41,7 @@ const routes: RouteObject[] = [
                 ),
             },
             {
-                path: "users", 
+                path: "users",
                 element: (
                     <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization]}>
                         <UserListPage />
@@ -48,7 +49,15 @@ const routes: RouteObject[] = [
                 ),
             },
             {
-                path: "tasks", 
+                path: "users/create",
+                element: (
+                    <ProtectedRoute allowedRoles={[Roles.admin]}>
+                        <UserCreatePage />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "tasks",
                 element: (
                     <ProtectedRoute allowedRoles={[Roles.admin, Roles.organization, Roles.user]}>
                         <TaskListPage />
@@ -58,7 +67,7 @@ const routes: RouteObject[] = [
         ],
     },
     {
-        path: "*", 
+        path: "*",
         element: <Error status={404} title="404" subTitle="Sorry, the page you visited does not exist." />,
     },
 ];

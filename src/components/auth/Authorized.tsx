@@ -1,5 +1,7 @@
 import { FC, memo } from "react";
-import { Role } from "../../types";
+import { IUser, Role } from "../../types";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 interface IAuthorizedComponentProps {
     allowedRoles: Role[];
@@ -7,8 +9,12 @@ interface IAuthorizedComponentProps {
 }
 
 const AuthorizedComponent: FC<IAuthorizedComponentProps> = ({ allowedRoles, children }) => {
-    if (allowedRoles.includes(userRole)) {
-        return children;
+    const user: IUser | null = useSelector((state: RootState) => state.auth.user);
+
+    if (user) {
+        if (allowedRoles.includes(user.role)) {
+            return children;
+        }
     }
 };
 

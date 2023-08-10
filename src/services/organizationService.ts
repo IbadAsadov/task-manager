@@ -13,12 +13,12 @@ interface IQureyParams {
     limit?: number;
 }
 
-export const getOrganizations = async (query_params: IQureyParams = {}) => {
+export const getOrganizations = async (query_params: IQureyParams = {}): Promise<IOrganization[]> => {
     const params = new URLSearchParams(query_params as Record<string, string>);
     const queryString = "?" + params.toString();
     const response: AxiosResponse = await request.get(`/organizations${queryString}`);
 
-    return response;
+    return response.data;
 };
 
 export const removeOrganization = async (id: number) => {

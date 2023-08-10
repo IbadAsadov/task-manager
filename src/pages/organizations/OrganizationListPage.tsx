@@ -12,8 +12,8 @@ const OrganizationListP: FC = () => {
     }, []);
 
     const fetchData = async () => {
-        const response = await getOrganizations();
-        setData(response.data);
+        const responseData = await getOrganizations();
+        setData(responseData);
     };
 
     const handleDelete = async (id: number) => {
